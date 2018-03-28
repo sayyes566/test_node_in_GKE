@@ -23,6 +23,7 @@ jobs:
             echo "-----start test:"
             python simple_test.py
             echo "-----end test"
+
   pre_deploy:
     docker:
       - image: google/cloud-sdk
@@ -45,13 +46,14 @@ jobs:
 
 workflows:
   version: 2
-  build_and_test:
+  build-test-pre_deploy:
     jobs:
       - build
-      - test
+      - test:
+          requires:
+            - build
       - pre_deploy:
-        requires:
-          - test
-          - build
+          requires:
+            - test
 
 
