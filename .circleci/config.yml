@@ -7,7 +7,6 @@ jobs:
   build:
     docker:
       - image: google/cloud-sdk
-      working_directory: ~
     steps:
       - checkout
       - run: echo "HELLO build"
