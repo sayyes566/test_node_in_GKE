@@ -42,7 +42,6 @@ jobs:
             gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
             gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
             echo "-----end config"
-
 workflows:
   version: 2
   build-test-pre_deploy:
