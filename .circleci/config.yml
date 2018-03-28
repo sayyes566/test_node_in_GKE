@@ -7,6 +7,7 @@ version: 2
 jobs:
   build:
     docker:
+      - image: circleci/<language>:<version TAG>
       - image:  google/cloud-sdk
       working_directory: ~
     steps:
